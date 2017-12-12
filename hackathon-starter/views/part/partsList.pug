@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+
+  ul
+  each val in partsList
+    form.form-horizontal(action='/parts/delete', method='POST')
+      input(type='hidden', name='_csrf', value=_csrf)
+      input(type='hidden', name='_id', value=val._id)
+      button.btn.btn-success(type='submit')
+        i.fa.fa-user-plus
+        | delete part
+    li= val.partName
+    li= val.description
+    li= val.quantity
+    li= val.price
+    li= val.location

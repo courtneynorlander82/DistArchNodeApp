@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+  h1 Add a Part
+  form.form-horizontal(id='addPart-form', action='/parts', method='POST')
+  input(type='hidden', name='_csrf', value=_csrf)
+  .form-group
+    label.col-sm-3.control-label(for='partName') Part Name
+    .col-sm-7
+      input.form-control(type='string', name='partName', id='partName', placeholder='Part Name', autofocus, required)
+  .form-group
+    label.col-sm-3.control-label(for='quantity') Quantity
+    .col-sm-7
+      input.form-control(type='number', name='quantity', id='quantity', placeholder='Quantity', required)
+  .form-group
+    label.col-sm-3.control-label(for='description') Description
+    .col-sm-7
+      input.form-control(type='string', name='description', id='description', placeholder='Description', required)
+  .form-group
+    label.col-sm-3.control-label(for='price') Price
+    .col-sm-7
+      input.form-control(type='number', name='price', id='price', placeholder='Price', required)
+  .form-group
+    label.col-sm-3.control-label(for='location') Location
+    .col-sm-7
+      input.form-control(type='string', name='location', id='location', placeholder='Location', required)
+  .form-group
+    .col-sm-offset-3.col-sm-7
+      button.btn.btn-success(type='submit')
+        i.fa.fa-user-plus
+        | Add part
